@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hybrid_qml"
+version = "0.1.0"
+description = "Does the Quantum Layer Matter? An Entanglement-Ablation Study of a Hybrid Quantum-Classical Neural Network"
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+license = "MIT"
+authors = [{ name = "Saeid Khonji" }]
+dependencies = [
+    "torch>=2.4,<3.0",
+    "pennylane>=0.42,<1.0",
+    "numpy>=2.0,<3.0",
+    "scipy>=1.13,<2.0",
+    "scikit-learn>=1.5,<2.0",
+    "matplotlib>=3.9,<4.0",
+    "pillow>=10.4,<14.0",
+]
+
+[project.scripts]
+hybrid-qml = "hybrid_qml.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
