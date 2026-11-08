@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+title: "Does the Quantum Layer Matter? An Entanglement-Ablation Study of a Hybrid Quantum–Classical Neural Network"
+type: software
+authors:
+  - family-names: "Khonji"
+    given-names: "Saeid"
+version: "0.1.0"
+license: "MIT"
+repository-code: "https://github.com/CashewLover/hybrid-quantum-classical-nn"
