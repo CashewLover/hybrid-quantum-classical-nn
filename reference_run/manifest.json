@@ -1,0 +1,131 @@
+{
+  "hybrid_qml_version": "0.1.0",
+  "started_utc": "2026-11-18T01:37:57.714981+00:00",
+  "completed_utc": "2026-11-18T01:47:50.385134+00:00",
+  "total_elapsed_seconds": 592.6631770000004,
+  "git": {
+    "commit": "18d6108b54294a7c02a473dbf913307c69d4a3fa",
+    "dirty": false,
+    "available": true
+  },
+  "versions": {
+    "python": "3.14.8",
+    "hybrid_qml": "0.1.0",
+    "torch": "2.15.0+cpu",
+    "pennylane": "0.45.1",
+    "pennylane-lightning": "0.45.0",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "pillow": "13.0.0"
+  },
+  "hardware": {
+    "os": "Windows-11-10.0.28000-SP0",
+    "machine": "AMD64",
+    "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "cpu_count": 20,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU (driver present, PyTorch CPU build)",
+    "torch_cuda_available": false
+  },
+  "run_spec": {
+    "preset": "standard",
+    "seeds": 20,
+    "moons_epochs": 40,
+    "parity_epochs": 60,
+    "grid_resolution": 100,
+    "device": "cpu",
+    "is_confirmatory": true,
+    "is_preliminary": false,
+    "protocol": {
+      "title": "Does the Quantum Layer Matter? An Entanglement-Ablation Study of a Hybrid Quantum\u2013Classical Neural Network",
+      "n_qubits_moons": 4,
+      "n_qubits_parity": 2,
+      "n_layers": 3,
+      "encoding_scale_moons": 3.141592653589793,
+      "encoding_scale_parity": 1.5707963267948966,
+      "n_train": 300,
+      "n_test": 5000,
+      "moons_noise": 0.2,
+      "parity_cluster_std": 0.25,
+      "lr": 0.05,
+      "batch_size": 32,
+      "moons_epochs": 40,
+      "parity_epochs": 60,
+      "entropy_sample_size": 500,
+      "equivalence_margin": 0.02,
+      "bootstrap_resamples": 10000,
+      "bootstrap_seed": 20260605,
+      "additive_ceiling": 0.75,
+      "additive_leak_tolerance": 0.05,
+      "standard_seeds": 20,
+      "quick_seeds": 3,
+      "smoke_seeds": 1,
+      "default_device": "cpu",
+      "frame_epochs": [
+        1,
+        6,
+        11,
+        16,
+        21,
+        26,
+        31,
+        36
+      ],
+      "grid_resolution_standard": 100,
+      "grid_resolution_fast": 40,
+      "test_seed_moons": 900001,
+      "test_seed_parity": 900002,
+      "entropy_subsample_seed": 900003,
+      "train_data_seed_offset": 100000,
+      "outer_init_seed_offset": 200000,
+      "middle_init_seed_offset": 300000,
+      "batch_seed_offset": 400000,
+      "pilot_seed_start": 1000,
+      "negative_control_seeds": [
+        8000,
+        8001,
+        8002
+      ],
+      "negative_control_tolerance": 0.07
+    }
+  },
+  "validation_checks": [
+    {
+      "check_id": 1,
+      "name": "Independent reference simulator",
+      "passed": true,
+      "detail": "max_err=9.992e-16 (tol 1e-9), max_norm_dev=4.441e-16, max_bound_excess=0.000e+00"
+    },
+    {
+      "check_id": 2,
+      "name": "Entanglement switch",
+      "passed": true,
+      "detail": "off_cross=7.772e-16, off_entropy=1.417e-15, on_cross=1.094e+00, on_entropy=0.882"
+    },
+    {
+      "check_id": 3,
+      "name": "Autodiff vs parameter-shift gradients",
+      "passed": true,
+      "detail": "rel_l2_err=7.782e-16 (tol 1e-6)"
+    },
+    {
+      "check_id": 4,
+      "name": "Parity no classical feature mixing",
+      "passed": true,
+      "detail": "max_cross_deriv=0.0 (must be exact 0.0), min_diag_deriv=0.910"
+    },
+    {
+      "check_id": 5,
+      "name": "Data, pairing, and parameter counts",
+      "passed": true,
+      "detail": "moons(300/5000, params 36/36/40/0), parity(300/5000, params 18/18/40), pairing exact"
+    },
+    {
+      "check_id": 6,
+      "name": "Negative control (shuffled labels)",
+      "passed": true,
+      "detail": "mean_shuffled_test_acc=0.4399 (|acc-0.5|=0.0601 <= 0.07)"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+hypothesis_id,experiment,variant_a,variant_b,prediction,n_seeds,mean_diff,sd_diff,ci_low,ci_high,margin,verdict,consistent,preliminary
+H1,E2 (Moons),hybrid_entangled,classical_mlp,Practically equivalent,20,0.022180000000000012,0.03839396334129407,0.006329749999999981,0.03905050000000001,0.02,A higher,False,False
+H2,E2 (Moons),hybrid_entangled,hybrid_no_entanglement,Practically equivalent,20,-0.005419999999999992,0.010961924533296337,-0.010309999999999986,-0.0010097499999999874,0.02,Practically equivalent,True,False
+H3,E3 (Parity),parity_entangled,parity_no_entanglement,Entangled higher by more than the margin,20,0.48686999999999997,0.02159944200058978,0.47709975,0.4954305,0.02,A higher (> margin),True,False
